@@ -1,0 +1,8 @@
+<h1>Index Page</h1>
+
+<%= @users.each do |user| %>
+  <div>
+    <div><strong><%= user.username %></strong></div>
+    <div><%= user.email %></div>
+  </div><br>
+<% end %>

@@ -1,24 +1,14 @@
 <h1>New page</h1>
 
-<form accept-charset="UTF-8" action="/users" method="post">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+<%= form_with model: @user do |f| %>
+  <%= f.label(:username, "Your New Username: ") %>
+  <%= f.text_field(:username, placeholder: "cool username bro") %>
 
-  <div>
-    <label for="username">Username:
-    <input type="text" id="username" name="user[username]">
-  </div>
+  <%= f.label(:email, "Your New Email: ") %>
+  <%= f.email_field(:email, placeholder: "cool email bro") %>
 
-  <div>
-    <label for="email">Email:
-    <input type="email" id="email" name="user[email]">
-  </div>
+  <%= f.label(:password, "Your New Password: ") %>
+  <%= f.password_field(:password, placeholder: "cool password bro") %>
 
-  <div>
-    <label for="password">Password:
-    <input type="password" id="password" name="user[password]">
-  </div>
-
-  <div>
-    <input type="submit">
-  </div>
-</form>
+  <%= f.submit %>
+<% end %>
